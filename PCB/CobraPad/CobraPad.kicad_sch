@@ -3872,7 +3872,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_Plate"
 			(at 27.94 25.4 0)
 			(hide yes)
 			(show_name no)
@@ -3954,7 +3954,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 93.98 152.0952 0)
 			(hide yes)
 			(show_name no)
@@ -4904,7 +4904,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_Plate"
 			(at 27.94 15.24 0)
 			(hide yes)
 			(show_name no)
@@ -4984,7 +4984,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_Plate"
 			(at 27.94 35.56 0)
 			(hide yes)
 			(show_name no)
@@ -5066,7 +5066,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 185.42 150.1648 0)
 			(hide yes)
 			(show_name no)
@@ -5306,7 +5306,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 33.02 152.0952 0)
 			(hide yes)
 			(show_name no)
@@ -5388,7 +5388,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 207.01 152.0952 0)
 			(hide yes)
 			(show_name no)
@@ -5648,7 +5648,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_Plate"
 			(at 74.93 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -5818,7 +5818,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 72.39 151.4348 0)
 			(hide yes)
 			(show_name no)
@@ -5979,7 +5979,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 243.84 148.8948 0)
 			(hide yes)
 			(show_name no)
@@ -6059,7 +6059,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_Plate"
 			(at 27.94 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -6218,7 +6218,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 129.54 151.4348 0)
 			(hide yes)
 			(show_name no)
@@ -6300,7 +6300,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm"
 			(at 218.186 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -6491,7 +6491,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_Plate"
 			(at 74.93 16.51 0)
 			(hide yes)
 			(show_name no)
@@ -6573,7 +6573,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 152.4 152.0952 0)
 			(hide yes)
 			(show_name no)
@@ -7527,7 +7527,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_Plate"
 			(at 74.93 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -8213,7 +8213,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_Plate"
 			(at 74.93 29.21 0)
 			(hide yes)
 			(show_name no)
