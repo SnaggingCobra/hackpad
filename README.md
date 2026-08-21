@@ -1,19 +1,38 @@
 # CobraPad
 
-CobraPad is a compact USB macro pad built around a Seeed XIAO RP2040 and assembled from the KiCad design in this repository. The KiCad files in [PCB/CobraPad](PCB/CobraPad) are the authoritative source for the board, pin mapping, and hardware layout.
+A compact 2x4 macro pad built around the Seeed XIAO RP2040, designed to fit in a clean low-profile case with a rotary encoder, OLED display, and underglow LED strip.
 
-## Hardware summary
+This project keeps the KiCad PCB and case as the source of truth, with the firmware mapped directly to the actual board net names and pads.
+
+## Overview
 
 - MCU: Seeed XIAO RP2040
-- Layout: 2-row by 4-column matrix with 1 diode per switch
-- Input: 8 mechanical keys + rotary encoder with push switch
-- Display: SSD1306 OLED over I2C
-- Lighting: 8 LED SK6812MINI-E chain
-- Power: 3.3V rail from the XIAO board, with common GND
+- Layout: 2 rows x 4 columns, 8 key matrix
+- Extras: rotary encoder with push switch, SSD1306 OLED, eight SK6812MINI-E LEDs
+- Firmware: CircuitPython
+- Case: custom enclosure with top shell and bottom shell
 
-## Verified board mapping
+## Photos
 
-The mapping below was extracted from the actual schematic and board files and is used by the firmware in [Firmware/circuitpython/code.py](Firmware/circuitpython/code.py).
+### Overall board
+
+![Overall board](assets/KICAD_PCB.png)
+
+### Schematic
+
+![Schematic](assets/KICAD_SCH.png)
+
+### PCB render
+
+![PCB view](assets/KICAD_PCB.png)
+
+### Case fit
+
+The final mechanical files are in [Case](Case) and include the top and bottom shell exports.
+
+## Verified hardware mapping
+
+The following pins are the actual board mapping used by the firmware in [Firmware/circuitpython/code.py](Firmware/circuitpython/code.py):
 
 | Function | KiCad signal / board net | CircuitPython pin |
 | --- | --- | --- |
@@ -29,52 +48,69 @@ The mapping below was extracted from the actual schematic and board files and is
 | Encoder B | PA5_A9_D9_MISO | D9 |
 | LED data | PA6_A10_D10_MOSI | D10 |
 
+## BOM
+
+| Part | Quantity | Notes |
+| --- | ---: | --- |
+| Seeed XIAO RP2040 | 1 | Main controller |
+| SK6812MINI-E | 8 | LED strip / underglow |
+| Mechanical key switches | 8 | Matrix keys |
+| Diodes (1N4148 or equivalent) | 8 | One per switch |
+| Rotary encoder | 1 | EC11-style encoder with switch |
+| SSD1306 OLED 0.91" | 1 | 128x32 display |
+| 3D-printed case parts | 1 set | Top and bottom shell |
+| M2 screws / standoffs | 4+ | Case mounting |
+| USB cable | 1 | Board programming and use |
+
 ## Repository layout
 
-- [PCB/CobraPad](PCB/CobraPad) — KiCad schematic, board, project config, and design assets
-- [kicad-libs](kicad-libs) — project-local symbol and footprint libraries
-- [Firmware](Firmware) — CircuitPython firmware and instructions
-- [CAD](CAD) — mechanical CAD and exported case files
-- [Case](Case) — final case parts and exported STEP files
-- [assets](assets) — board and schematic visual references
-- [production](production) — fabrication outputs and release artifacts
+- [PCB/CobraPad](PCB/CobraPad) — KiCad source files for the board and schematic
+- [kicad-libs](kicad-libs) — project-specific symbols and footprints
+- [Firmware](Firmware) — CircuitPython firmware and setup notes
+- [Case](Case) — FreeCAD source and exported case parts
+- [assets](assets) — project screenshots and render images
+- [production](production) — fabrication and submission outputs
+
+## Production files
+
+The final production artifacts are organized for the Hackpad submission flow:
+
+- [production/gerbers.zip](production/gerbers.zip) — packaged PCB fabrication outputs
+- [production/CobraPad.step](production/CobraPad.step) — board export
+- [production/CobraPAD_CASE_FINAL_top_cover.step](production/CobraPAD_CASE_FINAL_top_cover.step) — case top panel
+- [production/CobraPAD_CASE_Finalbottom_shell.step](production/CobraPAD_CASE_Finalbottom_shell.step) — case bottom shell
+- [production/CobraPad_circuitpython.zip](production/CobraPad_circuitpython.zip) — firmware bundle
 
 ## Firmware
 
-The ready-to-flash firmware lives in [Firmware/circuitpython/code.py](Firmware/circuitpython/code.py). The companion documentation is in [Firmware/README.md](Firmware/README.md).
+Firmware is in [Firmware/circuitpython/code.py](Firmware/circuitpython/code.py). Companion notes are in [Firmware/README.md](Firmware/README.md).
 
-### Flashing workflow
+## Build notes
 
-1. Install CircuitPython for the Seeed XIAO RP2040.
-2. Copy the contents of [Firmware/circuitpython](Firmware/circuitpython) to the CIRCUITPY drive.
-3. Confirm the board enumerates as a USB keyboard.
-4. Test the key matrix, OLED, encoder, and LED output.
-
-## Mechanical files
-
-The final case design and exports are present in [Case](Case):
-
-- [Case/CobraPAD_CASE_FINAL.FCStd](Case/CobraPAD_CASE_FINAL.FCStd)
-- [Case/CobraPAD_CASE_FINAL_top_cover.step](Case/CobraPAD_CASE_FINAL_top_cover.step)
-- [Case/CobraPAD_CASE_Finalbottom_shell.step](Case/CobraPAD_CASE_Finalbottom_shell.step)
+1. Open [PCB/CobraPad/CobraPad.kicad_pro](PCB/CobraPad/CobraPad.kicad_pro) in KiCad.
+2. Verify the board matches the schematic and approved parts list.
+3. Flash CircuitPython onto the XIAO RP2040.
+4. Copy the contents of [Firmware/circuitpython](Firmware/circuitpython) onto the CIRCUITPY drive.
+5. Assemble the PCB, case, encoder, and OLED.
+6. Validate keyboard, encoder, LED, and display behavior.
 
 ## Physical validation checklist
 
-The following checks still require a real hardware test on the assembled board:
+The following still need to be confirmed on the assembled hardware:
 
-- Confirm all switch matrix rows/columns register correctly on the host
-- Verify the rotary encoder increments and decrements in the expected direction
-- Confirm the encoder button press works as a key or function trigger
-- Verify the SSD1306 OLED powers on and displays the startup state
-- Confirm the LED chain lights in the correct sequence and brightness
-- Check USB enumeration and keyboard behavior across the target OS
-- Inspect the final assembly for mechanical fit, screw clearance, and cable strain
+- Matrix key presses register correctly on the host
+- Encoder rotation direction is correct
+- Encoder push button input functions as expected
+- OLED powers on and displays the startup screen
+- LED chain lights correctly
+- USB enumeration works reliably
+- Case fit is correct and no mechanical interference occurs
 
 ## Notes
 
-- The board files in [PCB/CobraPad](PCB/CobraPad) were used as the source of truth for this project.
-- No PCB or case redesign was performed during this pass; the repository was finalized around the existing design.
-- The firmware is intentionally constrained to the actual pin assignments in the schematic so it matches the hardware without assumptions.
+- The PCB and case were treated as the source of truth for this project.
+- No board redesign was performed during this pass.
+- The firmware is intentionally tied to the real KiCad pin assignments so it matches the hardware exactly.
 
 ## License
 
