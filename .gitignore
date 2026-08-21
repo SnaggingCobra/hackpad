@@ -1,0 +1,23 @@
+# KiCad artifact clutter
+*.lck
+*.bak
+*.prl
+*.tmp
+*.log
+*.zip
+*.uf2
+*.bin
+*~
+PCB/CobraPad/.history/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS/editor noise
+.DS_Store
+.vscode/
+
+# Local board exports
+production/*
+!production/.gitkeep
