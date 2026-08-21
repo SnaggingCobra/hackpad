@@ -1,0 +1,6 @@
+(version 1)
+
+(rule "Allow tighter clearance for reverse-mount LED cutouts"
+  (constraint edge_clearance (min 0.2mm))
+  (condition "A.insideCourtyard('D*') || B.insideCourtyard('D*')")
+)
