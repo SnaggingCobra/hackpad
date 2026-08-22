@@ -1,0 +1,13 @@
+Reference,Quantity,Component,Value,Footprint,Notes
+U1,1,Seeed XIAO RP2040,RP2040,MODULE-SEEEDUINO-XIAO,Main microcontroller
+SW1-SW8,8,Mechanical switch,Cherry MX-compatible or equivalent,MX style,Key matrix
+D1-D8,8,Diode,1N4148 or equivalent,SMD/through-hole,One per switch
+SW9,1,Rotary encoder with switch,EC11-style,Rotary_Encoder_Alps_EC11E,Includes encoder shaft and push switch
+OLED1,1,OLED display,SSD1306 128x32,I2C module,128x32 display over I2C
+LED1-LED8,8,RGB LED,SK6812MINI-E,SK6812MINI-E,Addressable LED chain
+C1-C3,3,Decoupling capacitor,0.1uF or equivalent,0402/0603,Power smoothing
+R1,1,Resistor,10k,0402/0603,Optional pull-up or reset support
+M1-M4,4,Case mounting hardware,M2 screw + standoff,Hardware,As required for assembly
+USB1,1,USB cable,USB-C/USB-Micro depending on board,External,Programming and use
+CaseTop,1,3D printed top shell,Custom,Custom,Included STL/STEP export
+CaseBottom,1,3D printed bottom shell,Custom,Custom,Included STL/STEP export
