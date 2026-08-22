@@ -1,10 +1,8 @@
 # KiCad artifact clutter
 *.lck
 *.bak
-*.prl
 *.tmp
 *.log
-*.zip
 *.uf2
 *.bin
 *~
@@ -18,6 +16,9 @@ __pycache__/
 .DS_Store
 .vscode/
 
+# Keep actual project files tracked; do not ignore production artifacts
+# production/*
+# *.zip
+
 # Local board exports
-production/*
-!production/.gitkeep
+# Keep submission outputs and case files in version control.

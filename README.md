@@ -71,7 +71,7 @@ See [BOM.csv](BOM.csv) for the current project bill of materials.
 - [PCB/CobraPad](PCB/CobraPad) — KiCad PCB, schematic, and project files
 - [kicad-libs](kicad-libs) — custom symbols and library files
 - [CAD](CAD) — assembled CAD and mechanical source files
-- [Case](Case) — case source and generated shell files
+- [CAD/Case](CAD/Case) — case source and generated shell files
 - [Firmware](Firmware) — CircuitPython firmware and notes
 - [assets](assets) — project screenshots and render images
 - [production](production) — manufacturing and production outputs
