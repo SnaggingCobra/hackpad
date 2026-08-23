@@ -115,7 +115,7 @@ def handle_encoder():
 # Main firmware loop
 while True:
     for row_index, row in enumerate(rows):
-        row.value = False
+        row.value = False   
         time.sleep(0.0005)
         for col_index, col in enumerate(cols):
             is_pressed = not col.value
@@ -130,4 +130,4 @@ while True:
 
     set_leds_for_matrix()
     handle_encoder()
-    time.sleep(0.01)
+    time.sleep(0.01)    

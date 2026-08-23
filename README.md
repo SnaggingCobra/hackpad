@@ -64,7 +64,22 @@ The firmware in [Firmware/circuitpython/code.py](Firmware/circuitpython/code.py)
 
 ## BOM
 
-See [BOM.csv](BOM.csv) for the current project bill of materials.
+The table below is the verified BOM for the current KiCad schematic and board assembly.
+
+| Component | Quantity | Description |
+| --- | ---: | --- |
+| Seeed XIAO RP2040 | 1 | Main microcontroller board |
+| Mechanical keyboard switch | 8 | Cherry MX-compatible switches for the key matrix |
+| 1N4148 diode | 8 | One diode per switch for matrix protection and flyback suppression |
+| SK6812MINI-E RGB LED | 8 | Addressable underglow/lighting LEDs |
+| SSD1306 128x32 OLED module | 1 | I2C display for status and output |
+| Rotary encoder with push switch | 1 | EC11-style encoder for control input |
+| 100 nF decoupling capacitor | 8 | SMD power-filter capacitors used across the board (C1-C8) |
+| M2 case mounting hardware | 4 | Screws/standoffs used for the enclosure assembly |
+| 3D-printed top shell | 1 | Custom top enclosure cover |
+| 3D-printed bottom shell | 1 | Custom bottom enclosure base |
+
+See [BOM.csv](BOM.csv) for the CSV version of the same parts list.
 
 ## Repository layout
 
